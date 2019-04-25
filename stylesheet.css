@@ -243,7 +243,7 @@ select {
 }
 
 .button_query {
-    background-color: #000;
+    background-color: #434343;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -278,7 +278,7 @@ button a {
 footer {
     text-align: center;
     width: 100%;
-    min-height: 14.5rem;
+    min-height: 16.5rem;
     background-color: #434343;
 }
 

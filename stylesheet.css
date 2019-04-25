@@ -168,6 +168,63 @@ section #atributos_museu {
     padding: 5px;
 }
 
+
+/*novo */
+
+#titulo_atributos {
+    font-family: open-sans, sans-serif;
+    font-size: 20px;
+    color: #1F996C;
+}
+
+#titulo_secoes {
+    margin: 0px auto;
+    width: 50%;
+    padding: 1px;
+}
+
+#titulo_secoes h4 {
+    font-family: open-sans, sans-serif;
+    font-size: 22px;
+    color: black;
+}
+
+section #atributos_colecoes {
+    background-color: white;
+    text-align: center;
+    font-family: open-sans, sans-serif;
+    font-size: 16px;
+}
+
+#atributos_colecoes ul {
+    list-style-type: none;
+    text-align: center;
+    margin-right: 40px
+}
+
+#atributos_colecoes li {
+    text-align: center;
+    margin: 10px;
+}
+
+section #atributos_atividades {
+    background-color: white;
+    text-align: center;
+    font-family: open-sans, sans-serif;
+    font-size: 16px;
+}
+
+#atributos_atividades ul {
+    list-style-type: none;
+    text-align: center;
+    margin-right: 40px
+}
+
+#atributos_atividades li {
+    text-align: center;
+    margin: 10px;
+}
+
 #barra_busca p {}
 
 select {

@@ -141,6 +141,11 @@ section #atributos_museu {
     margin: 25px;
 }
 
+#resultado p {
+    text-align: right;
+    color: gray;
+}
+
 #resultado #busca_info {
     margin: 0px auto;
     position: relative;
@@ -150,7 +155,7 @@ section #atributos_museu {
 
 #nome_museu {
     font-size: 22px;
-    text-align: left;
+    text-align: center;
     margin: 10px;
 }
 

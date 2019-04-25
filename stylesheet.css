@@ -10,7 +10,7 @@ body {
 header {
     padding: 0px 7%;
     height: 90px;
-
+    min-width: 720px;
     background-color: #1F996C;
  }
 
@@ -58,14 +58,14 @@ header form {
 /* Section */
 
 main {
-	min-height:	calc(100vh - 90px - 14.5rem);
+    min-height:	calc(100vh - 90px - 14.5rem);
 }
 
 article {
     padding: 20px;
     margin: 25px 200px;
     color: black;
-    background-color: #FFEE76;
+    background-color: #FFF5D6;
     font-family: open-sans, sans-serif;
     text-align: center;
 }
@@ -76,30 +76,95 @@ article h1{
 }
 
 article ul{
-	list-style-type: none;
-	font-size: 16px;
-}
-
-article p{
+    list-style-type: none;
     font-size: 16px;
 }
 
-h1#titulo_museu {
-	background-color: black;
+article li {
+    text-align: center;
 }
 
-atributos_museu {
-
+article p{
+    text-align: center;
+    font-size: 16px;
 }
-	
 
+#paragrafo1_img {
+    display: table-cell;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    max-width: 35%;
+}
+
+section #atributos_museu {
+    background-color: white;
+    text-align: center;
+    font-family: open-sans, sans-serif;
+    font-size: 16px;
+}
+
+#atributos_museu ul {
+    list-style-type: none;
+    text-align: center;
+    margin-right: 40px;
+}
+
+#atributos_museu li {
+    text-align: center;
+    margin: 10px;
+    
+}
+
+#museu_sobre_img {
+   min-width: 25%;
+   min-height: 25%;
+   max-width: 100%;
+   max-height: 100%;
+}
+
+
+#museu_sobre p {
+    max-width: 60%;
+    text-align: justify;
+    margin: 0px auto;
+}
+
+ #resultado{
+    position: relative;
+    margin: 25px;
+}
+
+#resultado #busca_foto {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border: 1px solid green;
+}
+
+#resultado #busca_info {
+    position: relative;
+    width: calc(100% - 180px);
+    border: 1px solid blue;
+}
+
+#campo_titulo {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+}
+
+#campo_info {
+    font-size: 16px;
+    text-align: left;
+    padding: 5px;
+}
 
 /* Footer */
 footer{
     text-align: center;
-	bottom: 0;
     width: 100%;
-	height: 14.5rem;
+    height: 14.5rem;
 
     background-color: #434343;
 }

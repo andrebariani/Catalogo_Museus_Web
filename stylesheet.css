@@ -130,27 +130,36 @@ section #atributos_museu {
 }
 
 #resultado {
-    position: relative;
+    text-align: center;
     margin: 25px;
 }
 
-#resultado #busca_foto {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    border: 1px solid green;
-}
-
 #resultado #busca_info {
+    margin: 0px auto;
     position: relative;
     width: calc(100% - 180px);
-    border: 1px solid blue;
+    border-bottom: 1px solid black;
+}
+
+#nome_museu {
+    font-size: 22px;
+    text-align: left;
+    margin: 10px;
 }
 
 #campo_titulo {
     font-weight: bold;
     font-size: 16px;
     text-align: left;
+}
+
+#nome_museu a {
+    text-decoration: none;
+    color: black;
+}
+
+#nome_museu a:hover {
+    color: #1F996C;
 }
 
 #campo_info {
@@ -165,7 +174,7 @@ select {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
 }
 
 #query {
@@ -173,7 +182,7 @@ select {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
 }
 
 .button_query {
@@ -182,8 +191,22 @@ select {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     cursor: pointer;
+}
+
+#paginacao li {
+    display: inline-block;
+    padding: 10px;
+}
+
+#anterior {
+    color: gray;
+}
+
+#pagina_atual {
+    font-weight: bolder;
+    color: #1F996C;
 }
 
 

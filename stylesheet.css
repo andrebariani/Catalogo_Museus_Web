@@ -90,7 +90,7 @@ article p {
     font-size: 16px;
 }
 
-article img {
+article #paragrafo1_img {
   dysplay: block;
   margin-left: auto;
   margin-right: auto;
@@ -366,12 +366,12 @@ footer #rodape_logos {
 
 footer #logo_dcomp {
     display: block;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
-    max-width: 35%;
-    max-height: 35%;
+    max-width: 30%;
+    max-height: 30%;
 }
 
 footer #logo_ufscar_rodape {

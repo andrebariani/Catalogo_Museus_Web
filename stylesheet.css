@@ -1,44 +1,14 @@
 @charset "UTF-8";
-body {
-    min-width: 500px;
-    margin: 0;
-    padding: 0;
-}
-
 
 /* Menu - cabecalho */
 
-header {
-    padding: 0px 7%;
-    height: 90px;
-    min-width: 720px;
-    background-color: #1F996C;
-}
-
-header img {
-    margin: 0;
-    padding: 12px 14px;
-    float: left;
-}
-
-header nav {
-    float: right;
-}
-
-header nav ul {
-    list-style-type: none;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
+nav ul li {
     display: inline-block;
-    margin-top: 35px;
     font-family: open-sans, sans-serif;
     font-style: bold;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
+    color: white;
 }
 
 nav ul li a {
@@ -49,135 +19,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #FFCC47;
-}
-
-header form {
-    float: right;
-}
-
-
-/* Section */
-
-main {
-    min-height: calc(100vh - 90px - 14.5rem);
-}
-
-article {
-    padding: 20px;
-    margin: 25px 200px;
-    color: black;
-    background-color: #FFF5D6;
-    font-family: open-sans, sans-serif;
-    text-align: center;
-}
-
-article h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-article ul {
-    list-style-type: none;
-    font-size: 16px;
-}
-
-article li {
-    text-align: center;
-}
-
-article p {
-    text-align: center;
-    font-size: 16px;
-}
-
-article #paragrafo1_img {
-  dysplay: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-#paragrafo1_img {
-    display: table-cell;
-    position: relative;
-    top: 10px;
-    left: 0px;
-    max-width: 35%;
-}
-
-section #atributos_museu {
-    background-color: white;
-    text-align: center;
-    font-family: open-sans, sans-serif;
-    font-size: 16px;
-}
-
-#atributos_museu ul {
-    list-style-type: none;
-    text-align: center;
-    margin-right: 40px;
-}
-
-#atributos_museu li {
-    text-align: center;
-    margin: 10px;
-}
-
-#museu_sobre_img {
-    min-width: 25%;
-    min-height: 25%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#museu_sobre p {
-    max-width: 60%;
-    text-align: justify;
-    margin: 0px auto;
-}
-
-#resultado {
-    text-align: center;
-    margin: 25px;
-}
-
-#resultado p {
-    text-align: right;
-    color: gray;
-}
-
-#resultado #busca_info {
-    margin: 0px auto;
-    position: relative;
-    width: calc(100% - 180px);
-    border-bottom: 1px solid black;
-}
-
-#nome_museu {
-    font-size: 22px;
-    text-align: center;
-    margin: 10px;
-}
-
-#campo_titulo {
-    font-weight: bold;
-    font-size: 16px;
-    text-align: left;
-}
-
-#nome_museu a {
-    text-decoration: none;
-    color: black;
-}
-
-#nome_museu a:hover {
-    color: #1F996C;
-}
-
-#campo_info {
-    font-size: 16px;
-    text-align: left;
-    padding: 5px;
 }
 
 
@@ -237,51 +78,67 @@ section #atributos_atividades {
     margin: 10px;
 }
 
-#barra_busca p {}
+/*  Busca */
 
-select {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    /*border-radius: 4px;*/
+
+#Busca{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(15, 140, 95) !important;
 }
 
-#query {
-    width: 65%;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    /*border-radius: 4px;*/
+.searchbar{
+        margin-bottom: 150px;
+        margin-top: 200px;
+        height: 60px;
+        background-color: #353b48;
+        border-radius: 30px;
+        padding: 10px;
 }
 
-.button_query {
-    background-color: #434343;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    /*border-radius: 4px;*/
-    cursor: pointer;
+.search_input{
+        color: white;
+        border: 0;
+        outline: 0;
+        background: none;
+        width: 0;
+        caret-color:transparent;
+        line-height: 40px;
+        transition: width 0.4s linear;
+ }
+
+.searchbar > .search_input{
+        padding: 0 10px;
+        width: 450px;
+        caret-color:darkgoldenrod;
+        transition: width 0.4s linear;
 }
 
-button a {
-    text-decoration: none;
-    padding: 25px 15px;
-    color: white;
+.searchbar:hover > .search_icon{
+        text-decoration: none;
+        background: white;
+        color: #1F996C;
 }
 
-#paginacao li {
-    display: inline-block;
-    padding: 10px;
+.search_icon {
+        height: 40px;
+        width: 40px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color:#353b48;
 }
 
-#anterior {
-    color: gray;
-}
-
-#pagina_atual {
-    font-weight: bolder;
-    color: #1F996C;
+#icon_busca{
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 

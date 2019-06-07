@@ -201,7 +201,7 @@ footer #mapa_link {
     font-size: 14px;
 }
 
-footer #mapa_link a {
+.mapa_link a {
     text-decoration: none;
     color: #b2b2b2;
     padding: 20px;
@@ -212,7 +212,7 @@ footer #rodape_equipe {
     width: 20%;
 }
 
-footer #p_equipe {
+.p_equipe {
     color: #b2b2b2;
     text-align: center;
     font-family: open-sans, sans-serif;
@@ -220,13 +220,14 @@ footer #p_equipe {
     list-style-type: none;
 }
 
-footer #rodape_logos {
+#rodape_logos {
     float: right;
     width: 20%;
     height: 100%;
+    padding: 0;
 }
 
-footer #logo_dcomp {
+#logo_dcomp {
     display: block;
     margin-top: 20px;
     margin-left: auto;
@@ -236,7 +237,7 @@ footer #logo_dcomp {
     max-height: 30%;
 }
 
-footer #logo_ufscar_rodape {
+#logo_ufscar_rodape {
     width: 30%;
     height: 30%;
 }

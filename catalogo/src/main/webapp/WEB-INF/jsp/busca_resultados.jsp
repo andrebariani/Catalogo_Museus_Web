@@ -12,7 +12,7 @@
                 <p>Exibindo resultados 1-5 de 136.</p>
                 <div id="busca_info">
                     <ul>
-                        <li id="nome_museu"><a href="museu.html">Museu Ferroviário de Pires do Rio</a></li>
+                        <li id="nome_museu"><a href="/museu">Museu Ferroviário de Pires do Rio</a></li>
                         <li id="campo_titulo">Horário de funcionamento:</li>
                         <li id="campo_info">08:00 - 17:00</li>
                         <li id="campo_titulo">Preço do ingresso:</li>
@@ -23,7 +23,7 @@
             <div id="resultado">
                 <div id="busca_info">
                     <ul>
-                        <li id="nome_museu"><a href="museu.html">Museu Paleontológico Arqueológico Walter Ilha</a></li>
+                        <li id="nome_museu"><a href="/museu">Museu Paleontológico Arqueológico Walter Ilha</a></li>
                         <li id="campo_titulo">Horário de funcionamento:</li>
                         <li id="campo_info">09:00 - 17:00</li>
                         <li id="campo_titulo">Preço do ingresso:</li>
@@ -34,7 +34,7 @@
             <div id="resultado">
                 <div id="busca_info">
                     <ul>
-                        <li id="nome_museu"><a href="museu.html">Museu da Estrada de Ferro Sorocabana</a></li>
+                        <li id="nome_museu"><a href="/museu">Museu da Estrada de Ferro Sorocabana</a></li>
                         <li id="campo_titulo">Horário de funcionamento:</li>
                         <li id="campo_info">08:00 - 17:00</li>
                         <li id="campo_titulo">Preço do ingresso:</li>
@@ -45,7 +45,7 @@
             <div id="resultado">
                 <div id="busca_info">
                     <ul>
-                        <li id="nome_museu"><a href="museu.html">Museu do Ipiranga</a></li>
+                        <li id="nome_museu"><a href="/museu">Museu do Ipiranga</a></li>
                         <li id="campo_titulo">Horário de funcionamento:</li>
                         <li id="campo_info">09:30 - 17:00</li>
                         <li id="campo_titulo">Preço do ingresso:</li>
@@ -56,7 +56,7 @@
             <div id="resultado">
                 <div id="busca_info">
                     <ul>
-                        <li id="nome_museu"><a href="museu.html">Fundação Mar Museu de História</a></li>
+                        <li id="nome_museu"><a href="/museu">Fundação Mar Museu de História</a></li>
                         <li id="campo_titulo">Horário de funcionamento:</li>
                         <li id="campo_info">12:00 - 17:00</li>
                         <li id="campo_titulo">Preço do ingresso:</li>

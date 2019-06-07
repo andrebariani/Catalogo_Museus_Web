@@ -1,6 +1,7 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8"%>
 <%@attribute name="header" fragment="true" %>
 <%@attribute name="footer" fragment="true" %>
+
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -30,15 +31,15 @@
     <header>
         <nav class="navbar navbar-expand-lg" style="background-color: rgb(5, 95, 62);">
 
-            <a class="navbar-brand mb-0 ml-5" href="index.html"><img src="imagens/Logo_Museu_cropped.png" /></a>
+            <a class="navbar-brand mb-0 ml-5" href="/"><img src="imagens/Logo_Museu_cropped.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
                 <span class="navbar-toggler-icon"><img src="imagens/expandir.png" /></span>
             </button>
 
             <div class="collapse navbar-collapse mr-5 mt-3" id="navbarsite">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ml-5"><a class="nav-link" href="index.jsp">Início</a></li>
-                    <li class="nav-item ml-5"><a class="nav-link" href="busca.jsp">Busca</a></li>
+                    <li class="nav-item ml-5"><a class="nav-link" href="/">Início</a></li>
+                    <li class="nav-item ml-5"><a class="nav-link" href="/busca">Busca</a></li>
                     <li class="nav-item ml-5"><a class="nav-link" href="/sobre">Sobre</a></li>
                 </ul>
             </div>
@@ -62,9 +63,9 @@
                 <div id="rodape_mapa" class="col-6 col-md mt-5">
                     <h4 class="titulo_rodape">Mapa</h4>
                     <ul class="list-unstyled text-small">
-                        <li class="mapa_link"><a href="index.html">Início</a></li>
-                        <li class="mapa_link"><a href="busca.html">Busca</a></li>
-                        <li class="mapa_link"><a href="sobre.html">Sobre</a></li>
+                        <li class="mapa_link"><a href="/">Início</a></li>
+                        <li class="mapa_link"><a href="/busca">Busca</a></li>
+                        <li class="mapa_link"><a href="/sobre">Sobre</a></li>
                     </ul>
                 </div>
 

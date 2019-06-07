@@ -1,27 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8" />
-    <title>Resultados da busca - Catálogo Nacional de Museus (CNM)</title>
-    <link rel="icon" type="image/x-png" href="imagens/Logo_Museu_icon.png" />
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-</head>
-
-<body>
-    <!--Cabecalho-->
-    <header id="cabecalho">
-        <a href="index.html"><img src="imagens/Logo_Museu_cropped.png" /></a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="busca.html">Busca</a></li>
-                <!--target blank faz com que abra-se uma nova aba ao clicar no link-->
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-
+<t:base>
     <section>
         <article>
             <h1>Resultados da busca por: "História"</h1>
@@ -99,42 +80,4 @@
             </div>
         </article>
     </section>
-
-    <!--Rodape-->
-    <footer id="rodape">
-        <div id="rodape_info">
-            <img src="imagens/Logo_Museu_cropped.png" />
-            <h4 id="titulo_rodape">Catálogo Nacional de Museus (CNM)</h4>
-            <p id="texto_rodape">Projeto desenvolvido para a disciplina Desenvolvimento para Web, ministrada pela profa. Dra. Luciana Zaina.</p>
-        </div>
-        <div id="rodape_mapa">
-            <h4 id="titulo_rodape">Mapa</h4>
-            <ul>
-                <li id="mapa_link"><a href="index.html">Início</a></li>
-                <li id="mapa_link"><a href="busca.html">Busca</a></li>
-                <!--target blank faz com que abra-se uma nova aba ao clicar no link-->
-                <li id="mapa_link"><a href="sobre.html">Sobre</a></li>
-            </ul>
-
-        </div>
-        <div id="rodape_equipe">
-            <h4 id="titulo_rodape">Equipe</h4>
-            <ul>
-                <li id="p_equipe">André</li>
-                <li id="p_equipe">Guilherme</li>
-                <li id="p_equipe">Giovanni</li>
-                <li id="p_equipe">Wilson</li>
-            </ul>
-        </div>
-        <div id="rodape_logos">
-            <img id="logo_dcomp" src="imagens/logo_dcomp.png" />
-            <img id="logo_ufscar_rodape" src="imagens/LogoUFSCar_png.png" />
-
-        </div>
-    </footer>
-
-</body>
-
-
-
-</html>
+</t:base>

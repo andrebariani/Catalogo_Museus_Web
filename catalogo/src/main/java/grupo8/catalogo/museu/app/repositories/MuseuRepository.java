@@ -14,5 +14,8 @@ import grupo8.catalogo.museu.app.models.*;
 @Repository
 public interface MuseuRepository extends JpaRepository<Museu, Long> {
     @Query(value = "SELECT 0 as dtype, * FROM MUSEU WHERE cod_mus = :pCod ", nativeQuery = true)
-    Museu findByCodigo(@Param("pCod") int cod);
+    Museu findByMuseuCodigo(@Param("pCod") int cod);
+
+    @Query(value = "SELECT 0 as dtype, *  * FROM museu WHERE nome_mus LIKE ':pCod%'' ", nativeQuery = true)
+    Museu findByMuseuNome(@Param("pCod") String cod);
 }

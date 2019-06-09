@@ -19,7 +19,7 @@ public class MuseuController {
 
     @GetMapping({"/museu/{cod}"})
     public String Museu(Model model, @PathVariable("cod" ) int cod) {        
-        Museu museu = museu_repository.findByCodigo( cod );
+        Museu museu = museu_repository.findByMuseuCodigo( cod );
 
         model.addAttribute("museu", museu);
         return "museu";

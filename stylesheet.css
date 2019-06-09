@@ -78,6 +78,17 @@ section #atributos_atividades {
     margin: 10px;
 }
 
+.museus_destaque {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400
+}
+
+.card-title {
+    margin-bottom: auto;
+    min-height: 60px;
+}
+
 /*  Busca */
 
 
@@ -89,18 +100,32 @@ section #atributos_atividades {
     background: rgb(15, 140, 95) !important;
 }
 
-.searchbar{
+.searchbar, #search_op{
         margin-bottom: 150px;
         margin-top: 200px;
+        margin-right: 10px;
         height: 60px;
         background-color: #353b48;
         border-radius: 30px;
         padding: 10px;
+        color: white;
 }
 
-.search_input{
+.searchbar p {
+    color: black;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.searchbar .in_2 {
+    margin-left: 93px;
+       
+}
+
+.search_input {
         color: white;
         border: 0;
+        margin-bottom: 10px;
         outline: 0;
         background: none;
         width: 0;
@@ -112,14 +137,14 @@ section #atributos_atividades {
 .searchbar > .search_input{
         padding: 0 10px;
         width: 450px;
-        caret-color:darkgoldenrod;
+        caret-color:white;
         transition: width 0.4s linear;
 }
 
 .searchbar:hover > .search_icon{
-        text-decoration: none;
-        background: white;
-        color: #1F996C;
+    text-decoration: none;
+    background: #FFCC47;
+    color: #1F996C;
 }
 
 .search_icon {
@@ -141,6 +166,36 @@ section #atributos_atividades {
     display: block;
 }
 
+#colecao, #atividade {
+    display: none;
+}
+
+/* Sobre */
+
+#museu_sobre {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+}
+
+#paragrafo_sobre {
+    border: 1px solid #1F996C;
+    border-radius: 40px;
+    margin-top: 40px;
+}
+#museu_sobre_img {
+    margin-top: 25px;
+}
+
+#museu_sobre h1 {
+    margin: 20px;
+    font-size: 30px;
+} 
+
+#museu_sobre p {
+    text-align: justify;
+    margin: 20px;
+} 
 
 /* Footer */
 
@@ -149,16 +204,16 @@ footer {
     width: 100%;
     min-height: 16.5rem;
     background-color: #434343;
+    color: white;
 }
 
 footer #rodape_info {
     float: left;
     width: 25%;
-    margin: 20px 50px;
+    margin: 20px 40px;
 }
 
 footer #titulo_rodape {
-    color: white;
     font-family: open-sans, sans-serif;
     font-weight: bold;
     font-size: 16px;
@@ -201,7 +256,7 @@ footer #mapa_link {
     font-size: 14px;
 }
 
-footer #mapa_link a {
+.mapa_link a {
     text-decoration: none;
     color: #b2b2b2;
     padding: 20px;
@@ -212,7 +267,7 @@ footer #rodape_equipe {
     width: 20%;
 }
 
-footer #p_equipe {
+.p_equipe {
     color: #b2b2b2;
     text-align: center;
     font-family: open-sans, sans-serif;
@@ -220,13 +275,14 @@ footer #p_equipe {
     list-style-type: none;
 }
 
-footer #rodape_logos {
+#rodape_logos {
     float: right;
-    width: 20%;
+    width: 25%;
     height: 100%;
+    padding: 0;
 }
 
-footer #logo_dcomp {
+#logo_dcomp {
     display: block;
     margin-top: 20px;
     margin-left: auto;
@@ -236,7 +292,7 @@ footer #logo_dcomp {
     max-height: 30%;
 }
 
-footer #logo_ufscar_rodape {
+#logo_ufscar_rodape {
     width: 30%;
     height: 30%;
 }

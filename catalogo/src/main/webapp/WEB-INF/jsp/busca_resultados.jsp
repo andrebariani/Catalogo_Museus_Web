@@ -3,6 +3,9 @@
 
 <!DOCTYPE html>
 <t:base>
+    <link rel="icon" href="../imagens/Logo_Museu_icon.png" type="image/png" />
+    <link rel="shortcut icon" href="../imagens/Logo_Museu_icon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -31,19 +34,24 @@
                         <h1>Resultados da busca por: </h1>
                 </article>
                 <div id="busca" class="row mb-2">
-                            <div class="col-md-6">
-                                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                                    <div class="col p-4 d-flex flex-column position-static">
-                                        <strong class="d-inline-block mb-2 text-primary"></strong>
-                                        <h1 id="nome_museu" class="mb-0"><a href="/museu">Museu Ferroviário clique aqui plz</a></h1>
-                            
-                                        <h3 class="mb-0"> Horário de Funcionamento: </h3>
-                                        <p class="card-text mb-auto"></p>
+                        <div class="col-md-6">
+                            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary"></strong>
+                                    <!-- 
+                                        <c:url var="museu_link" value="/museu">
+                                        <c:param name="cod" value="100002" />
+                                        </c:url>
+                                    -->
+                                    <h1 id="nome_museu" class="mb-0"><a href="/museu/100003">Museu Ferroviário clique aqui plz</a></h1>
+                                    
+                                    <h3 class="mb-0"> Horário de Funcionamento: </h3>
+                                    <p class="card-text mb-auto"></p>
 
-                                        <h3 class="mb-0"> Preço do ingresso: </h3>
-                                    </div>
+                                    <h3 class="mb-0"> Preço do ingresso: </h3>
                                 </div>
                             </div>
+                        </div>
                 </div>
             </section>
         </main>

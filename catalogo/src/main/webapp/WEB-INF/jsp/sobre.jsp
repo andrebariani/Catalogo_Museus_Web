@@ -3,6 +3,9 @@
 
 <!DOCTYPE html>
 <t:base>
+<link rel="icon" href="../imagens/Logo_Museu_icon.png" type="image/png" />
+    <link rel="shortcut icon" href="../imagens/Logo_Museu_icon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
     <script>
         $("#sobre a").css("color", "#FFCC47");
         $("#sobre").css("borderBottom", "2px solid #FFCC47");

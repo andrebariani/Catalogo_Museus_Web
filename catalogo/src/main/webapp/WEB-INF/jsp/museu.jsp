@@ -4,96 +4,50 @@
 <!DOCTYPE html>
 <t:base>
     <main>
-        <!--
-        <% 
-        Objeto objeto = null;
-
-        String idobjeto = request.getParameter("identificacao para o objeto");
-
-            objeto = bancodados.getById(idobjeto); --verificar se no banco existe um retorno de objeto pelo identificador
-
-            ArrayList<'tipo do obejeto = 'obejetoAtividade' a ser retornada>'  listaAtivide = BancodeDados.ListarAtividade(idObjeto);
-
-           
-                
-            for(int i = 0; i < nome da lista.size(); i++ ){
-
-               
-            }
-        %>
-        
         <section>
             <article>
                 <div id="titulo_museu">
-                    <h1 id="titulo_museu"><%= objeto.getNome() %></h1>
+                    <h1 id="titulo_museu">Museu "${museu.getNome()}"</h1>
                 </div>
             </article>
             <div id="atributos_museu">
                 <ul>
                     <li>
-                      Rua: <%= objeto.getNome()%>
+                      Rua: 
                     </li>
                     <li>
-                        Número: <%= objeto.getNumero() %>
+                        Número: 
                     </li>
                     <li>
-                        Bairro: <%= objeto.getBairro() %>
+                        Bairro:
                     </li>
                     <li>
-                        Cidade:  <%= objeto.getCidade() %>
+                        Cidade:
                     </li>
                     <li>
-                        Telefone: <%= objeto.getTelefone() %>
+                        Telefone:
                     </li>
                     <li>
-                        Email:  <%= objeto.getEmail() %>
+                        Email:
                     </li>
-                    <% if(bjeto.getPreco() == 0){ >%
-                        <li>  Ingresoo: Gratuito </li>
-
-                    <% } else{ %>
-                        <li>  Ingresoo: <%= objeto.getPreco()%></li>
-
-                    <% } %>
-                 
                 </ul>
             </div>
-
-            
-                <%
-
-                    for(int i = 0; i < listaAtividade.size(); i++ ){ 
-
-                        ObjetoAtividade = listaAtividade.get(i);
-                        
-                        %>
-
-                        <div id="atributos_atividades">
-                            <article id="titulo_secoes">
-                                <h4>Atividades</h4>
-                            </article>
-                            <div id="atributos_atividades"></div>
-                                <h5 id="titulo_atributos"><%= ObjetoAtividade.getNomeAtiv() %></h5>
-                                    <ul>
-                                        <% if(bjeto.getPreco() == 0){ >%
-                                            <li>  Ingresoo: Gratuito </li>
-
-                                        <% } else{ %>
-                                            <li>  Ingresoo: <%= objetoAtividade.getPreco()%></li>
-
-                                        <% } %>                                        
-                                        <li>
-                                            Horário: <%= ObjetoAtividade.getNomeAtiv() %>
-                                        </li>
-                                        <li>
-                                            Tipo: <%= ObjetoAtividade.getTipoAtiv() %>
-                                        </li>
-                                    </ul>
-                            </div>
-                        </div>
-
-                  <%  } %>
-              -->
+            <div id="atributos_atividades">
+                <article id="titulo_secoes">
+                    <h4>Atividades</h4>
+                </article>
+                <div id="atributos_atividades"></div>
+                    <h5 id="titulo_atributos"></h5>
+                        <ul>                                     
+                            <li>
+                                Horário:
+                            </li>
+                            <li>
+                                Tipo:
+                            </li>
+                        </ul>
+                </div>
+            </div>
         </section>
     </main>
 </t:base>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import grupo8.catalogo.museu.app.models.Museu;
@@ -26,11 +27,13 @@ public class MuseuController {
     //     return "museu";
     // }
 
-    @GetMapping({ "/museu/{cod}" })
-    public String Museu(HttpSession session, @PathVariable int cod) {
-        Museu museu = museu_repository.findByCodigo(cod);
+    @RequestMapping({"/museu"})
+    public String Museu(Model model) {
+        Museu museu = museu_repository.findByCodigo(193748);
 
-        session.setAttribute("nome", museu.getNome());
+        model.addAttribute("museu", museu);
+
+        // model.addAttribute("nome", museu.getNome());
         
         return "museu";
     }

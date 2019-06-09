@@ -11,7 +11,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "COLECAO")
 public class Colecao extends Museu {
+    
     @Id
+    @Column(name = "cod_col")
     private int cod;
 
     @Column(name = "nome_col")

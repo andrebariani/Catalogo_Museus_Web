@@ -38,9 +38,9 @@
 
             <div class="collapse navbar-collapse mr-5 mt-3" id="navbarsite">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ml-5"><a class="nav-link" href="/">Início</a></li>
-                    <li class="nav-item ml-5"><a class="nav-link" href="/busca">Busca</a></li>
-                    <li class="nav-item ml-5"><a class="nav-link" href="/sobre">Sobre</a></li>
+                    <li class="nav-item ml-5" id="inicio"><a class="nav-link" href="/">Início</a></li>
+                    <li class="nav-item ml-5" id="busca"><a class="nav-link" href="/busca">Busca</a></li>
+                    <li class="nav-item ml-5" id="sobre"><a class="nav-link" href="/sobre">Sobre</a></li>
                 </ul>
             </div>
         </nav>
@@ -60,25 +60,25 @@
                         profa. Dra. Luciana Zaina.</p>
                 </div>
 
-                <div id="rodape_mapa" class="col-6 col-md mt-5">
+                <div id="rodape_mapa" class="col-6 col-md mt-4">
                     <h4 class="titulo_rodape">Mapa</h4>
                     <ul class="list-unstyled text-small">
-                        <li class="mapa_link"><a href="/">Início</a></li>
-                        <li class="mapa_link"><a href="/busca">Busca</a></li>
-                        <li class="mapa_link"><a href="/sobre">Sobre</a></li>
+                        <li class="mapa_link"><a href="/">Início</a></li><br>
+                        <li class="mapa_link"><a href="/busca">Busca</a></li><br>
+                        <li class="mapa_link"><a href="/sobre">Sobre</a></li><br>
                     </ul>
                 </div>
 
-                <div id="rodape_equipe" class="col-6 col-md mt-5">
+                <div id="rodape_equipe" class="col-6 col-md mt-4">
                     <h4 class="titulo_rodape">Equipe</h4>
                     <ul class="list-unstyled">
                         <li class="p_equipe">André</li><br>
-                        <li class="p_equipe">Guilherme</li><br>
                         <li class="p_equipe">Giovanni</li><br>
+                        <li class="p_equipe">Guilherme</li><br>
                         <li class="p_equipe">Wilson</li>
                     </ul>
                 </div>
-                <div id="rodape_logos" class="col-6 col-md mt-5">
+                <div id="rodape_logos" class="col-6 col-md mt-2">
                     <img id="logo_dcomp" src="imagens/logo_dcomp.png" />
                     <img id="logo_ufscar_rodape" src="imagens/LogoUFSCar_png.png" />
                 </div>

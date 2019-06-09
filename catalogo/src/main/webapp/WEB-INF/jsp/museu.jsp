@@ -4,100 +4,96 @@
 <!DOCTYPE html>
 <t:base>
     <main>
+        <!--
+        <% 
+        Objeto objeto = null;
+
+        String idobjeto = request.getParameter("identificacao para o objeto");
+
+            objeto = bancodados.getById(idobjeto); --verificar se no banco existe um retorno de objeto pelo identificador
+
+            ArrayList<'tipo do obejeto = 'obejetoAtividade' a ser retornada>'  listaAtivide = BancodeDados.ListarAtividade(idObjeto);
+
+           
+                
+            for(int i = 0; i < nome da lista.size(); i++ ){
+
+               
+            }
+        %>
+        
         <section>
             <article>
                 <div id="titulo_museu">
-                    <h1 id="titulo_museu">Museu Ferroviário de Pires do Rio</h1>
+                    <h1 id="titulo_museu"><%= objeto.getNome() %></h1>
                 </div>
             </article>
             <div id="atributos_museu">
                 <ul>
                     <li>
-                        Rua: Francisco de Souza Lobo
+                      Rua: <%= objeto.getNome()%>
                     </li>
                     <li>
-                        Número: 301
+                        Número: <%= objeto.getNumero() %>
                     </li>
                     <li>
-                        Bairro: Centro
+                        Bairro: <%= objeto.getBairro() %>
                     </li>
                     <li>
-                        Cidade: Pires do Rio - GO
+                        Cidade:  <%= objeto.getCidade() %>
                     </li>
                     <li>
-                        Telefone: (64) 3461-5504
+                        Telefone: <%= objeto.getTelefone() %>
                     </li>
                     <li>
-                        Email: muferpir@go.gov.br
+                        Email:  <%= objeto.getEmail() %>
                     </li>
-                    <li>
-                        Ingresso: Gratuito
-                    </li>
+                    <% if(bjeto.getPreco() == 0){ >%
+                        <li>  Ingresoo: Gratuito </li>
+
+                    <% } else{ %>
+                        <li>  Ingresoo: <%= objeto.getPreco()%></li>
+
+                    <% } %>
+                 
                 </ul>
             </div>
 
-            <div id="atributos_colecoes">
-                <article id="titulo_secoes">
-                    <h4>Coleções</h4>
-                </article>
-                <h5 id="titulo_atributos">Exposição de peças e modelos de trens </h5>
-                <ul>
-                    <li>
-                        Idioma: Português
-                    </li>
-                    <li>
-                        Horário: 8:00
-                    </li>
-                    <li>
-                        Tipo: Historia
-                    </li>
-                </ul>
+            
+                <%
 
-                <h5 id="titulo_atributos">Mecanismos de funcionamento de trens da antiguidade</h5>
-                <ul>
-                    <li>
-                        Idioma: Português
-                    </li>
-                    <li>
-                        Horário: 10:00
-                    </li>
-                    <li>
-                        Tipo: Tecnologia
-                    </li>
-                </ul>
-            </div>
+                    for(int i = 0; i < listaAtividade.size(); i++ ){ 
 
-            <div id="atributos_atividades">
-                <article id="titulo_secoes">
-                    <h4>Atividades</h4>
-                </article>
-                <div id="atributos_atividades"></div>
-                <h5 id="titulo_atributos">Exposição de peças e modelos de trens</h5>
-                <ul>
-                    <li>
-                        Preço: R$ 5,00
-                    </li>
-                    <li>
-                        Horário: 13:50
-                    </li>
-                    <li>
-                        Tipo: Exposição
-                    </li>
-                </ul>
+                        ObjetoAtividade = listaAtividade.get(i);
+                        
+                        %>
 
-                <h5 id="titulo_atributos">Passeio de trem pela cidade</h5>
-                <ul>
-                    <li>
-                        Preço: R$ 10,00
-                    </li>
-                    <li>
-                        Horário: 16:00
-                    </li>
-                    <li>
-                        Tipo: Passeio
-                    </li>
-                </ul>
-            </div>
+                        <div id="atributos_atividades">
+                            <article id="titulo_secoes">
+                                <h4>Atividades</h4>
+                            </article>
+                            <div id="atributos_atividades"></div>
+                                <h5 id="titulo_atributos"><%= ObjetoAtividade.getNomeAtiv() %></h5>
+                                    <ul>
+                                        <% if(bjeto.getPreco() == 0){ >%
+                                            <li>  Ingresoo: Gratuito </li>
+
+                                        <% } else{ %>
+                                            <li>  Ingresoo: <%= objetoAtividade.getPreco()%></li>
+
+                                        <% } %>                                        
+                                        <li>
+                                            Horário: <%= ObjetoAtividade.getNomeAtiv() %>
+                                        </li>
+                                        <li>
+                                            Tipo: <%= ObjetoAtividade.getTipoAtiv() %>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+
+                  <%  } %>
+              -->
         </section>
     </main>
 </t:base>

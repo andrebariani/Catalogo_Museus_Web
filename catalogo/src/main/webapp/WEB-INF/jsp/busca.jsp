@@ -3,47 +3,65 @@
 
 <!DOCTYPE html>
 <t:base>
+    <script>
+        $("#busca a").css("color", "#FFCC47");
+        $("#busca").css("borderBottom", "2px solid #FFCC47");
+        $("#busca a").css("borderBottomColor", "#FFCC47");
+    </script>
     <main role="main">
 
         <div class="container">
             <div class="d-flex justify-content-center h-100">
-                <div class="searchbar">
-                    <input class="search_input" type="text" name="Pesquisar" placeholder="Search...">
-                    <a href="/busca_resultados" class="search_icon"><img id="icon_busca" class="img-fluid mx-auto" src="imagens/icon.png"><i class="fas fa-search"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!--
-        <section>
-            <article id="barra_busca">
-                <h1>
-                    Busca de Dados
-                </h1>
-
-                <p>
-                    Realize aqui sua pesquisa por categoria de coleção ou por preço de atividade.
-                </p>
-
-                <p style="color:grey;">
-                    Exemplo de categoria de Coleção: "História", "Tecnologia", "Arqueologia", "Arte", "Outros";
-                </p>
-
-                <p style="color:grey;">
-                    Exemplo de Preços: "15", "49.99", "0";
-                </p>
-
-                <p>
-                    <select class="right" name="state" id="state">
-                        <option value="categoria" selected>Categoria de Coleção</option>
-                        <option value="preco">Preço de Atividade</option>
+                <div class="opcao_busca">
+                    <select id="search_op">
+                        <option select="selected" value="museu">Museu</option>
+                        <option value="colecao">Coleção</option>
+                        <option value="atividade">Atividade</option>
                     </select>
-                    <label for="login"></label><input type="text" id="query" name="Pesquisar" placeholder="Digite Termo de Busca Aqui">
-                    <a href="busca_resultados.html"><input class="button_query" type="submit" value="Pesquisar" href="sobre.html"></a>
-                </p>
-            </article>
-        </section>
+                </div>
+                <div class="searchbar">
+                    <input class="search_input" type="text" name="Pesquisar" id="ph" placeholder="Selecione ao lado uma opção de busca e abaixo o tipo...">
+                    <a href="/busca_resultados" class="search_icon"><img id="icon_busca" class="img-fluid mx-auto" src="imagens/icon.png"><i class="fas fa-search"></i></a>
+                    <div id="museu" class="opcao">
+                            <p>Buscar por:
+                            <input type="radio" name="museu" value="1" class="tipobusca"/> Nome</p>
+                        </div>
+                        <div id="colecao" class="opcao">
+                            <p>Buscar por:
+                            <input type="radio" name="colecao" value="2" class="tipobusca"/> Nome</p>  
+                            <p class="in_2"><input type="radio" name="colecao" value="3" class="tipobusca"/> Categoria</p>
+                        </div>
+                        <div id="atividade" class="opcao">
+                            <p>Buscar por:
+                            <input type="radio" name="atividade" value="4" class="tipobusca"/> Nome</p>  
+                            <p class="in_2"><input type="radio" name="atividade" value="5" class="tipobusca"/> Preço máximo</p>
+                        </div>
+                </div>
 
-    -->
+            </div>
+            <script>
+                $("#search_op").on('change', function(){
+                    $('.opcao').hide();
+                    $('#' + this.value).show();
+                });
+                /**
+                $(".tipobusca").on('change', function(){
+                        if($(this).val()==='1'){
+                            $("#id").attr(placeholder:"Digite o nome do museu aqui");       
+                        }
+                        if($(this).val()==='2'){
+                            $("#id").attr(placeholder:"Digite o nome da coleção aqui");       
+                        }
+                        if($(this).val()==='3'){
+                            $("#id").attr(placeholder:"Digite a categoria da coleção aqui");                               }
+                        if($(this).val()==='4'){
+                            $("#id").attr(placeholder:"Digite o nome da atividade aqui");
+                        }
+                        if($(this).val()==='4'){
+                            $("#id").attr(placeholder:"Digite o preço da atividade aqui");
+                        }
+                    });**/
+            </script>                
+        </div>
     </main>
 </t:base>

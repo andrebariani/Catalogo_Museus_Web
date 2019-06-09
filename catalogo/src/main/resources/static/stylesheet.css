@@ -149,6 +149,8 @@ footer {
     width: 100%;
     min-height: 16.5rem;
     background-color: #434343;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 footer #rodape_info {

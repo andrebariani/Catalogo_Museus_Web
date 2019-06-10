@@ -35,7 +35,7 @@
                                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                     <div class="col p-4 d-flex flex-column position-static">
                                         <strong class="d-inline-block mb-2 text-primary"></strong>
-                                        <h1 id="nome_museu" class="mb-0"><a href="/museu/10"></a></h1>
+                                        <h1 id="nome_museu" class="mb-0"><a href="/museu/10">Museu Boys</a></h1>
                             
                                         <h3 class="mb-0"> Horário de Funcionamento: </h3>
                                         <p class="card-text mb-auto"></p>

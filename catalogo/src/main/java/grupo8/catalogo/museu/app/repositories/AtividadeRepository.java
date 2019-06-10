@@ -22,4 +22,7 @@ public interface AtividadeRepository extends JpaRepository<Atividade, Long>{
                     "ON (lower(nome_ativ) LIKE ':pCod %')" + 
                     "WHERE m.cod_mus = c.cod_mus", nativeQuery = true)
     Atividade findByAtividadeNome(@Param("pCod") String cod);
+
+    @Query(value = "SELECT 0 as dtype, * FROM ATIVIDADE WHERE cod_mus = :pCod", nativeQuery = true)
+    List<Atividade> listAtividadeByMuseu(@Param("pCod") int cod);
 }

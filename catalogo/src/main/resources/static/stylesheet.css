@@ -2,6 +2,10 @@
 
 /* Menu - cabecalho */
 
+body {
+    overflow-x: hidden;
+}
+
 nav ul li {
     display: inline-block;
     font-family: open-sans, sans-serif;

@@ -1,18 +1,22 @@
 package grupo8.catalogo.museu.app.models;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
+@Embeddable
 @Table(name = "ATIVIDADE")
-public class Atividade extends Museu {
+public class Atividade {
 
     @Id
+    @Column(name = "cod_ativ")
     private int cod;
 
     @Column(name = "nome_ativ")
@@ -27,20 +31,16 @@ public class Atividade extends Museu {
     @Column(name = "preco_ativ")
     private float preco;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "cod_ativ", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "cod_mus")
     private Museu museu;
-    
-    public void Atividade(){
-        nome = "";
-        tipo = "";
-        horario = "";
-        preco = 0;
-        museu = new Museu();
+
+    public int getCod() {
+        return cod;
     }
 
-    public int getId() {
-        return this.cod;
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public String getNome() {
@@ -76,7 +76,11 @@ public class Atividade extends Museu {
     }
 
     public Museu getMuseu() {
-        return this.museu;
+        return museu;
     }
-    
+
+    public void setMuseu(Museu museu) {
+        this.museu = museu;
+    }
+
 }

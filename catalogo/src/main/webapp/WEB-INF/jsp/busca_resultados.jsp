@@ -3,9 +3,6 @@
 
 <!DOCTYPE html>
 <t:base>
-    <link rel="icon" href="imagens/Logo_Museu_icon.png" type="image/png" />
-    <link rel="shortcut icon" href="imagens/Logo_Museu_icon.png" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">

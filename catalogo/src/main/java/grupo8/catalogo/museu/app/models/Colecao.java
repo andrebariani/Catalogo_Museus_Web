@@ -1,17 +1,20 @@
 package grupo8.catalogo.museu.app.models;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
+@Embeddable
 @Table(name = "COLECAO")
-public class Colecao extends Museu {
-    
+public class Colecao {
+
     @Id
     @Column(name = "cod_col")
     private int cod;
@@ -28,16 +31,16 @@ public class Colecao extends Museu {
     @Column(name = "idioma")
     private String idioma;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "cod_col", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "cod_mus")
     private Museu museu;
-    
-    public void Colecao(){
-        nome = "";
-        idioma = "";
-        tipo = "";
-        horario = "";
-        museu = new Museu();
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public String getNome() {
@@ -46,14 +49,6 @@ public class Colecao extends Museu {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getIdioma() {
-        return idioma;
-    }
-
-    public void setIdioma(String idioma) {
-        this.idioma = idioma;
     }
 
     public String getTipo() {
@@ -72,7 +67,20 @@ public class Colecao extends Museu {
         this.horario = horario;
     }
 
-    public Museu getMuseu() {
-        return this.museu;
+    public String getIdioma() {
+        return idioma;
     }
+
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
+    }
+
+    public Museu getMuseu() {
+        return museu;
+    }
+
+    public void setMuseu(Museu museu) {
+        this.museu = museu;
+    }
+
 }

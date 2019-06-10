@@ -1,16 +1,19 @@
 package grupo8.catalogo.museu.app.models;
 
+import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@DiscriminatorValue("0")
-@Table(name = "MUSEU")
+@Table(name = "museu")
 public class Museu {
-    
+
     @Id
     @Column(name = "cod_mus")
     private int cod;
@@ -38,40 +41,19 @@ public class Museu {
 
     @Column(name = "preco_ent")
     private float preco;
-    
-    // private List<Colecao> colecoes;
-    
-    // private List<Atividade> atividades;
 
-    // @OneToMany(mappedBy="museu", fetch = FetchType.EAGER, targetEntity = Colecao.class)
-    // public List<Colecao> getColecoes() {
-    //     if (this.colecoes == null) {
-    //         this.colecoes = new ArrayList<>();
-    //     }
-    //     return this.colecoes;
-    // }
+    @OneToMany(mappedBy = "museu", targetEntity = Colecao.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Collection<Colecao> colecoes;
 
-    // @OneToMany(mappedBy="museu", fetch = FetchType.EAGER, targetEntity = Atividade.class)
-    // public List<Atividade> getAtividades() {
-    //     if (this.atividades == null) {
-    //         this.atividades = new ArrayList<>();
-    //     }
-    //     return this.atividades;
-    // }
-
-    public void Museu(){
-        nome = "";
-        email = "";
-        telefone = "";
-        rua = "";
-        numero = "";
-        bairro = "";
-        cidade = "";
-        preco = 0;
-    }
+    @OneToMany(mappedBy = "museu", targetEntity = Atividade.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Collection<Atividade> atividades;
 
     public int getCod() {
         return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public String getNome() {
@@ -137,4 +119,21 @@ public class Museu {
     public void setPreco(float preco) {
         this.preco = preco;
     }
+
+    public Collection<Colecao> getColecoes() {
+        return colecoes;
+    }
+
+    public void setColecoes(Collection<Colecao> colecoes) {
+        this.colecoes = colecoes;
+    }
+
+    public Collection<Atividade> getAtividades() {
+        return atividades;
+    }
+
+    public void setAtividades(Collection<Atividade> atividades) {
+        this.atividades = atividades;
+    }
+
 }

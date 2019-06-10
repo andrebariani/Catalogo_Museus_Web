@@ -22,6 +22,9 @@
 
     <title>Catálogo Nacional de Museus</title>
     
+    <link rel="icon" href="/imagens/Logo_Museu_icon.png" type="image/png" />
+    <link rel="shortcut icon" href="/imagens/Logo_Museu_icon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css" />
 </head>
 <body>
 
@@ -29,9 +32,9 @@
     <header>
         <nav class="navbar navbar-expand-lg" style="background-color: rgb(5, 95, 62);">
 
-            <!-- <a class="navbar-brand mb-0 ml-5" href="/"><img src="imagens/Logo_Museu_cropped.png" /></a> -->
+            <a class="navbar-brand mb-0 ml-5" href="/"><img src="/imagens/Logo_Museu_cropped.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
-                <span class="navbar-toggler-icon"><img src="imagens/expandir.png" /></span>
+                <span class="navbar-toggler-icon"><img src="/imagens/expandir.png" /></span>
             </button>
 
             <div class="collapse navbar-collapse mr-5 mt-3" id="navbarsite">
@@ -52,9 +55,8 @@
     <footer id="rodape" class="mt-5">
             <div class="row">
                 <div id="rodape_info" class="col-6 col-md mt-5">
-                    <!-- 
-                        <img src="imagens/Logo_Museu_cropped.png" />
-                    -->
+                        <img src="/imagens/Logo_Museu_cropped.png" />
+                
                     <h4 id="titulo_rodape" class="mt-3">Catálogo Nacional de Museus (CNM)</h4>
                     <p id="texto_rodape">Projeto desenvolvido para a disciplina Desenvolvimento para Web, ministrada pela
                         profa. Dra. Luciana Zaina.</p>
@@ -79,10 +81,8 @@
                     </ul>
                 </div>
                 <div id="rodape_logos" class="col-6 col-md mt-2">
-                <!-- 
-                    <img id="logo_dcomp" src="imagens/logo_dcomp.png" />
-                    <img id="logo_ufscar_rodape" src="imagens/LogoUFSCar_png.png" />
-                -->
+                    <img id="logo_dcomp" src="/imagens/logo_dcomp.png" />
+                    <img id="logo_ufscar_rodape" src="/imagens/LogoUFSCar_png.png" />
                 </div>
             </div>
 

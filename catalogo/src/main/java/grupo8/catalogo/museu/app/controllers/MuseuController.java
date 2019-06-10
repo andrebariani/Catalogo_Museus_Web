@@ -31,8 +31,6 @@ public class MuseuController {
 
         Museu museu = result.get();
 
-        System.out.println(museu.getColecoes());
-
         model.addAttribute("museu", museu);
 
         return "museu";

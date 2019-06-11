@@ -107,7 +107,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Museu Ferroviário de Pires do Rio<h4>
                                     <h6 class="card-subtitle mb-2 text-muted">História</h6>
-                                    <p class="card-text">O museu Ferroviário sorocabano com exposições de trens e
+                                    <p class="card-text">O museu Ferroviário de Goiás com exposições de trens e
                                         maquinário da época</p>
                                     <h6 class="card-subtitle my-2 text-muted">Horário de funcionamento:</h6>
                                     <ul class="list-group">

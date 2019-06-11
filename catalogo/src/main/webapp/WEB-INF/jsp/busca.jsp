@@ -55,6 +55,12 @@
             </ul>
             </nav>
 
+            <div>
+                <p id="text_busca_form">
+                    Selecione na aba acima a pesquisa a ser realizada.
+                </p>
+            </div>
+
             <div class="tab-content" id="conteudo-tab">
                 
                 <div class="tab-pane fade show active" id="museu" role="tabpanel">
@@ -65,8 +71,8 @@
                         </div>
 
                         <div class="form-group">
-                            <p class="form_busca"> Pesquisar por...
-                            <select class="form-control" id="museuAtributo">
+                            <p class="form_busca"> Pesquisar por
+                            <select id="museuAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="cidade">Cidade</option>
                             </select>
@@ -85,8 +91,8 @@
                         </div>
 
                         <div class="form-group">
-                            <p class="form_busca"> Pesquisar por...
-                            <select class="form-control" id="colecaoAtributo">
+                            <p class="form_busca"> Pesquisar por
+                            <select id="colecaoAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="tipo">Tipo (Exemplo: "História", "Arte", etc.)</option>
                             </select>
@@ -104,8 +110,8 @@
                         </div>
 
                         <div class="form-group">
-                            <p class="form_busca"> Pesquisar por...
-                            <select class="form-control" id="atividadeAtributo">
+                            <p class="form_busca"> Pesquisar por
+                            <select id="atividadeAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="preco">Preço</option>
                             </select>

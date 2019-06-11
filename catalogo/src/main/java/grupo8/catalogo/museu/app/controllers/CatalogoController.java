@@ -19,7 +19,7 @@ public class CatalogoController {
 
     @GetMapping({ "/museu/busca/nome/{nome}" })
     public String buscaMuseuPorNome(Model model, @PathVariable(value = "nome") String nome) {
-        Collection<Museu> museus = museuRepository.findByNome(nome)
+        Collection<Museu> museus = museuRepository.findByNome(nome);
 
         model.addAttribute(museus);
 

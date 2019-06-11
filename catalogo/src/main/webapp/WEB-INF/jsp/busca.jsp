@@ -7,6 +7,12 @@
         $("#busca a").css("color", "#FFCC47");
         $("#busca").css("borderBottom", "2px solid #FFCC47");
         $("#busca a").css("borderBottomColor", "#FFCC47");
+
+        function onSubmitMuseu() {
+            var museuQuery = document.getElementById("").value;
+            document.userform.action="/" + "/busca/" + "";
+        }
+    
     </script>
     <main role="main">
 
@@ -32,12 +38,16 @@
             </ul>
 
             <div class="tab-content" id="conteudo-tab">
+                
                 <div class="tab-pane fade show active" id="museu" role="tabpanel">
-                    <div class="searchbar">
-                        <input class="search_input" type="text" name="museu" placeholder="Selecione ao lado uma opção de busca e abaixo o tipo...">
-                        <input type="submit" href="/museu/busca/nome/museu" class="search_icon" text="">Pesquisar</a>
-                    </div>
+                    <form action="/museu/busca/nome">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="museu" placeholder="Selecione ao lado uma opção de busca e abaixo o tipo...">
+                            <input type="image" href="/museu/busca/nome/museu" class="search_icon" src="imagens/icon.png"></a>
+                        </div>
+                    </form>
                 </div>
+                
                 <div class="tab-pane fade show" id="colecao" role="tabpanel">
                     <div class="searchbar">
                         <input class="search_input" type="text" name="Pesquisar" placeholder="Selecione...">

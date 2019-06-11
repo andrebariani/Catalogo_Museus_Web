@@ -118,7 +118,7 @@
                                         <li class="list-group-item">Gratuito</li>
                                     </ul>
 
-                                    <div class="card-footer"><a href="#" class="card-link btn btn-secondary">Saiba
+                                    <div class="card-footer"><a href="museu/100001" class="card-link btn btn-secondary">Saiba
                                             mais</a></div>
 
                         </div>
@@ -145,7 +145,7 @@
                                         <li class="list-group-item">R$ 15,00</li>
                                     </ul>
 
-                                    <div class="card-footer"><a href="#" class="card-link btn btn-secondary">Saiba
+                                    <div class="card-footer"><a href="museu/100012" class="card-link btn btn-secondary">Saiba
                                             mais</a></div>
 
                         </div>
@@ -172,7 +172,7 @@
                                         <li class="list-group-item">R$ 20,00</li>
                                     </ul>
 
-                                    <div class="card-footer"><a href="#" class="card-link btn btn-secondary">Saiba
+                                    <div class="card-footer"><a href="museu/100011" class="card-link btn btn-secondary">Saiba
                                             mais</a></div>
                         </div>
                     </div>

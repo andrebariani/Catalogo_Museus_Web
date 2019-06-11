@@ -3,6 +3,8 @@ package grupo8.catalogo.museu.app.repositories;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -27,5 +29,6 @@ public interface AtividadeRepository extends JpaRepository<Atividade, Long>{
     @Query(value = "SELECT 0 as dtype, * FROM ATIVIDADE WHERE cod_mus = :pCod", nativeQuery = true)
     List<Atividade> listAtividadeByMuseu(@Param("pCod") int cod);
 
-    Collection<Atividade> findByNome(String nome);
+    Page<Atividade> findByNomeIgnoreCaseContaining(String nome, Pageable page);
+    Page<Atividade> findByPreco(float tipo, Pageable page);
 }

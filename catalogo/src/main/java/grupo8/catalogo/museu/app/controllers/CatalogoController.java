@@ -60,11 +60,25 @@ public class CatalogoController {
 
     @GetMapping({ "/colecao/busca/tipo/{tipo}" })
     public String buscaColecaoPorTipo(Model model, @PathVariable(value = "tipo") String tipo) {
-        Iterable<Object[]> a = colecaoRepository.findByTipoIgnoreCaseContaining(tipo);
+        Iterable<Object[]> col_temp = colecaoRepository.findByColecaoCategoria(tipo + "%");
         Collection<Colecao> colecoes = new ArrayList<Colecao>();
+        
+        for (Object[] linha : col_temp){
+            Colecao col = new Colecao();
+            Museu mus = new Museu();
 
-        for (Object i : a)
-            colecoes.add((Colecao)i);
+            mus.setCod(Integer.parseInt(linha[0].toString()));
+            mus.setNome(linha[1].toString());
+
+            col.setNome(linha[2].toString());
+            col.setTipo(linha[3].toString());
+            col.setHorario(linha[4].toString());
+
+            col.setMuseu(mus);
+
+            colecoes.add(col);
+        }
+            
 
         model.addAttribute("colecoes", colecoes);
         model.addAttribute("query", tipo);
@@ -84,7 +98,24 @@ public class CatalogoController {
 
     @GetMapping({ "/atividade/busca/preco/{preco}"})
     public String buscaAtividadePorPreco(Model model, @PathVariable(value = "preco") Float preco) {
-        Collection<Atividade> atividades = atividadeRepository.findByAtividadePreco(preco);
+        Iterable<Object[]> ativ_temp = atividadeRepository.findByAtividadePreco(preco);
+        Collection<Atividade> atividades = new ArrayList<Atividade>();
+        
+        for(Object[] linha : ativ_temp){
+            Atividade ativ = new Atividade();
+            Museu mus = new Museu();
+
+            mus.setCod(Integer.parseInt(linha[0].toString()));
+            mus.setNome(linha[1].toString());
+            
+            ativ.setHorario(linha[2].toString());
+            ativ.setNome(linha[3].toString());
+            ativ.setPreco(Float.parseFloat(linha[4].toString()));
+
+            ativ.setMuseu(mus);
+
+            atividades.add(ativ);
+        }    
 
         model.addAttribute("atividades", atividades);
         model.addAttribute("query", preco);

@@ -19,6 +19,10 @@
                     <h4 id="list-item-1">${museu.getNome()}</h4>
                         <div class="row no-gutters border rounded overflow-hidden flex-md-row shadow-sm h-md-2 card w-85 mb-5 mt-3">
                             <div class="card-body">
+                                
+                                <h5 class="card-title"><strong>Preço: </strong>R$ 
+                                            <fmt:formatNumber type = "number" minFractionDigits = "2" maxFractionDigits = "2" value = "${museu.getPreco()}" />
+                                </h5>
                                 <h5 class="card-title">Telefone: ${museu.getTelefone()}</h5>
                                 <h5 class="card-title">Endereço</h5>
                                 <ul class="list-group">

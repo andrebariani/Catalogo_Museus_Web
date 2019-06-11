@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <t:base>
@@ -8,9 +9,12 @@
         $("#busca").css("borderBottom", "2px solid #FFCC47");
         $("#busca a").css("borderBottomColor", "#FFCC47");
 
-        function onSubmitMuseu() {
-            var museuQuery = document.getElementById("").value;
-            document.userform.action="/" + "/busca/" + "";
+        function onSubmitMuseu(form) {
+            var museuQuery = document.getElementById("museuQuery").value;
+            form.action="/museu/busca/nome/" + museuQuery;
+            document.getElementById("museu_input").href = "/museu/busca/nome/" + museuQuery;
+            console.log(form.action);
+            console.log(document.getElementById("museu_input").href);
         }
     
     </script>
@@ -40,10 +44,10 @@
             <div class="tab-content" id="conteudo-tab">
                 
                 <div class="tab-pane fade show active" id="museu" role="tabpanel">
-                    <form action="/museu/busca/nome">
+                    <form action="museu/busca/nome/Ferroviário">
                         <div class="searchbar">
-                            <input class="search_input" type="text" name="museu" placeholder="Selecione ao lado uma opção de busca e abaixo o tipo...">
-                            <input type="image" href="/museu/busca/nome/museu" class="search_icon" src="imagens/icon.png"></a>
+                            <input class="search_input" type="text" id="museuQuery" placeholder="Selecione um campo de busca abaixo...">
+                            <input type="image" id="museu_input" class="search_icon" src="imagens/icon.png"></a>
                         </div>
                     </form>
                 </div>

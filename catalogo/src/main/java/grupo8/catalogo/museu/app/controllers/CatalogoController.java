@@ -1,5 +1,6 @@
 package grupo8.catalogo.museu.app.controllers;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,14 +123,13 @@ public class CatalogoController {
         return "lista_de_colecoes";
     }
 
-    @GetMapping({ "/colecao/busca/tipo/{tipo}/{page}" })
-    public String buscaColecaoPorTipo(Model model, @PathVariable(value = "tipo") String tipo, @PathVariable(value = "page") int page) {
-        Pageable SixCards = PageRequest.of(page, ELEMENTS_PER_PAGE);
-        Page<Colecao> colecoesPage = colecaoRepository.findByNomeIgnoreCaseContaining(tipo, SixCards);
+    @GetMapping({ "/colecao/busca/tipo/{tipo}" })
+    public String buscaColecaoPorTipo(Model model, @PathVariable(value = "tipo") String tipo) {
+        Iterable<Object[]> a = colecaoRepository.findByTipoIgnoreCaseContaining(tipo);
+        Collection<Colecao> colecoes = new ArrayList<Colecao>();
 
-        int maxPages = colecoesPage.getTotalPages();
-
-        Collection<Colecao> colecoes = colecoesPage.getContent();
+        for (Object i : a)
+            colecoes.add((Colecao)i);
 
         model.addAttribute("colecoes", colecoes);
         model.addAttribute("maxpages", maxPages);

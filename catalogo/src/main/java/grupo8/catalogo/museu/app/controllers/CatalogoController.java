@@ -96,11 +96,14 @@ public class CatalogoController {
         return "lista_de_atividades";
     }
 
-    @GetMapping({ "/atividade/busca/preco/{preco}"})
+    @GetMapping({ "/atividade/busca/preco/{preco}/{page}"})
     public String buscaAtividadePorPreco(Model model, @PathVariable(value = "preco") Float preco) {
-        Iterable<Object[]> ativ_temp = atividadeRepository.findByAtividadePreco(preco);
-        Collection<Atividade> atividades = new ArrayList<Atividade>();
+        Pageable SixCards = PageRequest.of(page, ELEMENTS_PER_PAGE);
+        Page<Object[]> ativPages = atividadeRepository.findByAtividadePreco(preco, SixCards);
+        Iterator<Object[]> ativ_temp = ativPages.getContent();
         
+        Collection<Atividades> atividades = new ArrayList<Atividade>();
+
         for(Object[] linha : ativ_temp){
             Atividade ativ = new Atividade();
             Museu mus = new Museu();

@@ -13,4 +13,5 @@ public interface MuseuRepository extends PagingAndSortingRepository<Museu, Long>
     Optional<Museu> findByCod(int cod);
 
     Collection<Museu> findByNome(String nome);
+    Collection<Museu> findByCidade(String cidade);
 }

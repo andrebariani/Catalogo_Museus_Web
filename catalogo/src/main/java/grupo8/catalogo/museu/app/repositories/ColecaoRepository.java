@@ -1,5 +1,6 @@
 package grupo8.catalogo.museu.app.repositories;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,5 +19,8 @@ public interface ColecaoRepository extends JpaRepository<Colecao, Long>{
     Iterable<Object[]> findByColecaoCategoria(@Param("pCod") String cod);
 
     @Query(value = "SELECT * FROM COLECAO WHERE cod_mus = :pCod", nativeQuery = true)
-    List<Colecao> listColecaoByMuseu(@Param("pCod") int cod);
+    Collection<Colecao> listColecaoByMuseu(@Param("pCod") int cod);
+
+    Collection<Colecao> findByNome(String nome);
+    Collection<Colecao> findByTipo(String tipo);
 }

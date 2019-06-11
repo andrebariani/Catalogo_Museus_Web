@@ -31,20 +31,23 @@
                 
                 <h1 class="align-text-top mt-3 mb-3">Resultados da busca por: ${query}</h1>
                
-                <c:forEach var="museu" items="${museus}">
-                    <c:set var = "museuUrl" value = "/museu/${museu.getCod()}" />
+                <c:forEach var="atividade" items="${atividades}">
+                    <c:set var = "atividadeUrl" value = "/museu/${atividade.getMuseu().getCod()}" />
                     <div id="busca" class="row mb-2">
                                 <div class="col-md-6">
                                     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-2 position-relative">
                                         <div class="col p-4 d-flex flex-column position-static">
 
-                                            <h3 id="nome_museu" class="mb-0"><a href="${museuUrl}">${museu.getNome()}</a></h3>
+                                            <h3 id="nome_atividade" class="mb-0"><a href="${atividadeUrl}">${atividade.getNome()}</a></h3>
                                 
-                                            <h6 class="mb-0">Preço de Entrada:</h6>
-                                            <p class="card-text mb-auto">R$ <fmt:formatNumber type = "number" minFractionDigits = "2" maxFractionDigits = "2" value = "${museu.getPreco()}"/></p>
+                                            <h6 class="mb-0">Horario de Início:</h6>
+                                            <p class="card-text mb-auto">${atividade.getHorario()}</p>
                                             
-                                            <h6 class="mb-0">Cidade: </h6>
-                                            <p class="card-text mb-auto"> ${museu.getCidade()} </p>
+                                            <h6 class="mb-0">Preço: </h6>
+                                            <p class="card-text mb-auto"> ${atividade.getPreco()} </p>
+
+                                            <h6 class="mb-0">Disponível no Museu: </h6>
+                                            <p class="card-text mb-auto"><a href="${atividadeUrl}"> ${atividade.getMuseu().getNome()}</a></p>
                                         </div>
                                     </div>
                                 </div>

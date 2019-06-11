@@ -2,6 +2,8 @@ package grupo8.catalogo.museu.app.controllers;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -146,8 +148,8 @@ public class CatalogoController {
             
 
         model.addAttribute("colecoes", colecoes);
-        model.addAttribute("maxpages", maxPages);
-        model.addAttribute("page", page);
+        // model.addAttribute("maxpages", maxPages);
+        // model.addAttribute("page", page);
         model.addAttribute("query", tipo);
 
         return "lista_de_colecoes";
@@ -171,23 +173,26 @@ public class CatalogoController {
     }
 
     @GetMapping({ "/atividade/busca/preco/{preco}/{page}"})
-    public String buscaAtividadePorPreco(Model model, @PathVariable(value = "preco") Float preco) {
+    public String buscaAtividadePorPreco(Model model, @PathVariable(value = "preco") Float preco, @PathVariable(value = "page") int page) {
         Pageable SixCards = PageRequest.of(page, ELEMENTS_PER_PAGE);
         Page<Object[]> ativPages = atividadeRepository.findByAtividadePreco(preco, SixCards);
-        Iterator<Object[]> ativ_temp = ativPages.getContent();
         
-        Collection<Atividades> atividades = new ArrayList<Atividade>();
+        int maxPages = ativPages.getTotalPages();
 
-        for(Object[] linha : ativ_temp){
+        List<Object[]> ativ_temp = ativPages.getContent();
+        
+        Collection<Atividade> atividades = new ArrayList<Atividade>();
+
+        for(int i = 0; i < ativ_temp.size(); i++){
             Atividade ativ = new Atividade();
             Museu mus = new Museu();
 
-            mus.setCod(Integer.parseInt(linha[0].toString()));
-            mus.setNome(linha[1].toString());
+            mus.setCod(Integer.parseInt(ativ_temp.get(i)[0].toString()));
+            mus.setNome(ativ_temp.get(i)[1].toString());
             
-            ativ.setHorario(linha[2].toString());
-            ativ.setNome(linha[3].toString());
-            ativ.setPreco(Float.parseFloat(linha[4].toString()));
+            ativ.setHorario(ativ_temp.get(i)[2].toString());
+            ativ.setNome(ativ_temp.get(i)[3].toString());
+            ativ.setPreco(Float.parseFloat(ativ_temp.get(i)[4].toString()));
 
             ativ.setMuseu(mus);
 

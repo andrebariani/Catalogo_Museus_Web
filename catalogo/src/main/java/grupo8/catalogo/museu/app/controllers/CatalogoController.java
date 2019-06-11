@@ -1,5 +1,6 @@
 package grupo8.catalogo.museu.app.controllers;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +60,11 @@ public class CatalogoController {
 
     @GetMapping({ "/colecao/busca/tipo/{tipo}" })
     public String buscaColecaoPorTipo(Model model, @PathVariable(value = "tipo") String tipo) {
-        Collection<Colecao> colecoes = colecaoRepository.findByNome(tipo);
+        Iterable<Object[]> a = colecaoRepository.findByTipoIgnoreCaseContaining(tipo);
+        Collection<Colecao> colecoes = new ArrayList<Colecao>();
+
+        for (Object i : a)
+            colecoes.add((Colecao)i);
 
         model.addAttribute("colecoes", colecoes);
         model.addAttribute("query", tipo);

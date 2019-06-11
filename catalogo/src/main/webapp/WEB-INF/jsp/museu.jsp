@@ -20,8 +20,16 @@
                         <div class="row no-gutters border rounded overflow-hidden flex-md-row shadow-sm h-md-2 card w-85 mb-5 mt-3">
                             <div class="card-body">
                                 
-                                <h5 class="card-title"><strong>Preço: </strong>R$ 
-                                            <fmt:formatNumber type = "number" minFractionDigits = "2" maxFractionDigits = "2" value = "${museu.getPreco()}" />
+                                <h5 class="card-title"><strong>Preço: </strong>
+                                             <c:choose>  
+                                                <c:when test="${museu.getPreco() eq 0}">
+                                                        Gratuito
+                                                </c:when>
+                                                <c:otherwise>
+                                                    R$ <fmt:formatNumber type = "number" minFractionDigits = "2" maxFractionDigits = "2" value = "${museu.getPreco()}"/>
+                                                    
+                                                </c:otherwise>
+                                            </c:choose>
                                 </h5>
                                 <h5 class="card-title">Telefone: ${museu.getTelefone()}</h5>
                                 <h5 class="card-title">Endereço</h5>
@@ -61,7 +69,6 @@
                         <c:if test = "${museu.atividades.size() == 0}">
                             <div class="row no-gutters border rounded overflow-hidden flex-md-row shadow-sm h-md-2 card w-85 mb-5 mt-3">
                                 <div class="col p-4 d-flex flex-column position-static card-body">
-                                    <h5 class="card-title">${atividade.nome}</h5>
                                     <ul class="list-group">
                                         <li class="list-group-item">
                                             <h5>Nenhuma atividade disponível.</h5>
@@ -81,9 +88,16 @@
                                         </li>
                                         <li class="list-group-item">
                                             
-                                            <strong>Preço: </strong>R$ 
-                                            <fmt:formatNumber type = "number" minFractionDigits = "2" maxFractionDigits = "2" value = "${atividade.preco}" />
-                                                
+                                            <strong>Preço: </strong>
+                                            <c:choose>  
+                                                <c:when test="${atividade.preco eq 0}">
+                                                        Gratuito
+                                                </c:when>
+                                                <c:otherwise>
+                                                    R$ <fmt:formatNumber type = "number" minFractionDigits = "2" maxFractionDigits = "2" value = "${atividade.preco}"/>
+                                                    
+                                                </c:otherwise>
+                                            </c:choose>   
                                         </li>
                                         <li class="list-group-item">
                                             <strong>Hora de abertura: </strong>${atividade.horario}

@@ -7,30 +7,26 @@
 <t:base>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar  mt-3 mb-3">
-                <h1 id="Titulo">Filtrar </h1>
-                <div class="sidebar-sticky">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <form>
-                                    <div class="form-group">
-                                        <label for="cidade" id="Titulo_filtro">cidade: </label>
-                                        <input type="text" class="form-control" id="cidade" placeholder="Digite a Cidade">
-                                    </div>
-                                    </form>
-                                </li>
-                            </ul>
-
-                <button id="botao_edicao" type="submit" class="btn btn-light">Filtrar</button>
-            </div>
-        </nav>
-
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 container">
             <section>
                 
                 <h1 class="align-text-top mt-3 mb-3">Resultados da busca por: ${query}</h1>
                
+                <ul class="list-group">
+                    <c:forEach begin="0" end="${maxpages}" var="i">
+                        <c:choose>  
+                            <c:when test="${page eq i}">
+                                <li class="list-group-item active">${i+1}
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="list-group-item"><a href="${url}${i}">${i+1}</a>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </ul>
+
                 <c:forEach var="colecao" items="${colecoes}">
                     <c:set var = "colecaoUrl" value = "/museu/${colecao.getMuseu().getCod()}" />
                     <div id="busca" class="row mb-2">

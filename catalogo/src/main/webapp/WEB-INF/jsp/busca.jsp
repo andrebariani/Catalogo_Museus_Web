@@ -11,24 +11,22 @@
         $("#busca a").css("borderBottomColor", "#FFCC47");
 
         function onSubmitMuseu() {
-            var museuQuery = document.getElementById("museuQuery").value;
-            var museuAtributo = document.getElementById("museuAtributo").value;
-            
-            document.formMuseu.action="/museu/busca/" + museuAtributo + "/" + museuQuery;
+            document.getElementById("museuQuery").name = document.getElementById("museuAtributo").value;    
+            document.formMuseu.action="/museu/busca/0";
         }
 
         function onSubmitColecao() {
             var colecaoQuery = document.getElementById("colecaoQuery").value;
             var colecaoAtributo = document.getElementById("colecaoAtributo").value;
             
-            document.formColecao.action="/colecao/busca/" + colecaoAtributo + "/" + colecaoQuery;
+            document.formColecao.action="/colecao/busca/" + colecaoAtributo + "/" + colecaoQuery + "/" + "0";
         }
 
         function onSubmitAtividade() {
             var atividadeQuery = document.getElementById("atividadeQuery").value;
             var atividadeAtributo = document.getElementById("atividadeAtributo").value;
             
-            document.formAtividade.action="/atividade/busca/" + atividadeAtributo + "/" + atividadeQuery;
+            document.formAtividade.action="/atividade/busca/" + atividadeAtributo + "/" + atividadeQuery + "/" + "0";
         }
     
     </script>
@@ -66,7 +64,7 @@
                 <div class="tab-pane fade show active" id="museu" role="tabpanel">
                     <form action="" name="formMuseu" onsubmit="onSubmitMuseu();">
                         <div class="searchbar">
-                            <input class="search_input" type="text" id="museuQuery" placeholder="Selecione um campo de busca abaixo...">
+                            <input class="search_input" type="text" id="museuQuery" name="nome" placeholder="Selecione um campo de busca abaixo...">
                             <input type="image" id="museu_input" class="search_icon" src="imagens/icon.png"></a>
                         </div>
 
@@ -75,6 +73,13 @@
                             <select id="museuAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="cidade">Cidade</option>
+                                <option value="preco">Preço (Em R$)</option>
+                                <option value="email">E-mail</option>
+                                <option value="telefone">Telefone</option>
+                                <option value="rua">Rua</option>
+                                <option value="numero">Número</option>
+                                <option value="bairro">Bairro</option>
+                                
                             </select>
                             </p>
                         </div>

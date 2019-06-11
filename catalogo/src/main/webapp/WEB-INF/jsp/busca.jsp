@@ -35,7 +35,6 @@
     <main role="main">
 
         <div class="container">
-
             <nav>
             <ul class="nav nav-tabs" id="lista-tab" role="tablist">
                 <li>
@@ -66,7 +65,7 @@
                         </div>
 
                         <div class="form-group">
-                            <p> Pesquisar por...
+                            <p class="form_busca"> Pesquisar por...
                             <select class="form-control" id="museuAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="cidade">Cidade</option>
@@ -86,7 +85,7 @@
                         </div>
 
                         <div class="form-group">
-                            <p> Pesquisar por...
+                            <p class="form_busca"> Pesquisar por...
                             <select class="form-control" id="colecaoAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="tipo">Tipo (Exemplo: "História", "Arte", etc.)</option>
@@ -105,7 +104,7 @@
                         </div>
 
                         <div class="form-group">
-                            <p> Pesquisar por...
+                            <p class="form_busca"> Pesquisar por...
                             <select class="form-control" id="atividadeAtributo">
                                 <option value="nome">Nome</option>
                                 <option value="preco">Preço</option>

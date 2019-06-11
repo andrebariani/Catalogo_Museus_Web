@@ -96,8 +96,8 @@ section #atributos_atividades {
 }
 
 .searchbar, #search_op{
-        margin-bottom: 150px;
-        margin-top: 200px;
+        margin-bottom: 10px;
+        margin-top: 140px;
         margin-right: 10px;
         height: 60px;
         background-color: #353b48;
@@ -161,6 +161,13 @@ section #atributos_atividades {
     display: block;
 }
 
+.nav a {
+    color: #aeaeae;
+}
+
+.form_busca {
+    margin-bottom: 150px;
+}
 
 /* museu */
 
@@ -192,8 +199,7 @@ section #atributos_atividades {
     text-decoration: none;
 }
 #nome_museu a:hover {
-    color: #FFCC47;
-    text-decoration: none;
+    color: #FFCC47;;
 }
 
 #botao_edicao{

@@ -16,7 +16,7 @@
                     <h1>Sobre nós</h1>
                     <p>Uma das maiores riquezas do Brasil é, sem dúvida, a nossa imensa riqueza cultural, que pode ser vista por todos os cantos do país. Esta riqueza nada mais é que a união da cultura de todos os povos que aqui vieram e fundiram suas histórias,
                         formando a nossa história.</p>
-                    <p>Com esta visão, criamos o Catálogo Nacional de Museus, um projeto sem fins lucrativos,democrático e acessível, para reunir as informações sobre espaços fascinantes e transformadores: os museus. Nosso objetivo é mostrar a todos a vastidão
+                    <p>Com esta visão, criamos o Catálogo Nacional de Museus, um projeto sem fins lucrativos, democrático e acessível, para reunir as informações sobre espaços fascinantes e transformadores: os museus. Nosso objetivo é mostrar a todos a vastidão
                         de conhecimento que os aguarda de norte a sul, para todos os gostos. Afinal, aprender com o passado é o primeiro passo para o futuro.</p>
                 </div>
                 <div id="paragrafo_sobre">

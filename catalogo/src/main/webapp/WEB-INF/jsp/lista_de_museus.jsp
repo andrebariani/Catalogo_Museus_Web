@@ -12,7 +12,11 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <form action="" name="formMuseu">
+                            <form action="/museu/busca" name="formMuseu">
+                                <div class="form-group">
+                                    <label for="telefone">Nome: </label>
+                                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite Nome" value="${nome}">
+                                </div>
                                 <div class="form-group">
                                     <label for="preco">Preço de Entrada: </label>
                                     <input type="text" class="form-control" name="preco" id="preco" placeholder="Digite o Preço de Entrada">
@@ -27,30 +31,30 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="telefone">Telefone: </label>
-                                    <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite Telefone">
+                                    <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite Telefone" value="${telefone}">
                                 </div>
                                 <div class="form-group">
                                     <label for="telefone">E-mail: </label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Digite o E-mail">
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Digite o E-mail" value="${email}">
                                 </div>
                                 <div class="form-group">
                                     <label for="rua">Rua: </label>
-                                    <input type="text" class="form-control" name="rua" id="rua" placeholder="Digite a Rua">
+                                    <input type="text" class="form-control" name="rua" id="rua" placeholder="Digite a Rua" value="${rua}">
                                 </div>
                                 <div class="form-group">
                                     <label for="rua">Número: </label>
-                                    <input type="text" class="form-control" name="numero" id="numero" placeholder="Digite o Número">
+                                    <input type="text" class="form-control" name="numero" id="numero" placeholder="Digite o Número" value="${numero}">
                                 </div>
                                 <div class="form-group">
                                     <label for="cidade">Cidade: </label>
-                                    <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Digite a Cidade">
+                                    <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Digite a Cidade" value="${cidade}">
                                 </div>
                                 <div class="form-group">
                                     <label for="bairro">Bairro: </label>
-                                    <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o Bairro">
+                                    <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o Bairro" value="${bairro}">
                                 </div>
-                                <button id="botao_edicao" type="submit" class="btn btn-light">Filtrar</button>
-                            </form>
+                                <button id="botao_edicao" type="submit" class="btn btn-light" name="page" value="${page}">Filtrar</button>
+                            
                         </li>
                     </ul>
             </div>
@@ -63,19 +67,21 @@
                 <h1 class="align-text-top mt-3 mb-3">Resultados da Pesquisa</h1>
                
                <ul class="list-group">
-                    <c:forEach begin="0" end="${maxPages}" var="i">
+                    <c:forEach begin="0" end="${maxpages - 1}" var="i">
                         <c:choose>  
                             <c:when test="${page eq i}">
-                                <li class="list-group-item active">${i+1}
+                                <li class="list-group-item active"><button type="submit" class="btn btn-light" name="page" value="${i}">${i+1}</button>
                                 </li>
                             </c:when>
                             <c:otherwise>
-                                <li class="list-group-item"><a href="${url}${i}">${i+1}</a>
+                                <li class="list-group-item"><button type="submit" class="btn btn-light" name="page" value="${i}">${i+1}</button>
                                 </li>
                             </c:otherwise>
                         </c:choose>
                     </c:forEach>
                 </ul>
+
+                </form>
                 <c:forEach var="museu" items="${museus}">
                     <c:set var = "museuUrl" value = "/museu/${museu.getCod()}" />
                     <div id="busca" class="row mb-2">

@@ -4,6 +4,18 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface MuseuSpecs extends JpaSpecificationExecutor<Museu> {
+    public static Specification<Museu> museuLessThanCod(int cod) {
+        return (root, query, cb) -> {
+            return cb.lessThan(root.get(Museu_.cod), cod);
+        };
+    }
+
+    public static Specification<Museu> museuGreaterThanCod(int cod) {
+        return (root, query, cb) -> {
+            return cb.greaterThan(root.get(Museu_.cod), cod);
+        };
+    }
+    
     public static Specification<Museu> museuLikeNome(String nome) {
         return (root, query, cb) -> {
             return cb.like(root.get(Museu_.nome), "%" + nome + "%");

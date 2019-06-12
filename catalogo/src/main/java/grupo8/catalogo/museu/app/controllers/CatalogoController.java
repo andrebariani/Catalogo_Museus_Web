@@ -39,8 +39,8 @@ public class CatalogoController {
 
     private static final int ELEMENTS_PER_PAGE = 6;
 
-    @GetMapping({ "/museu/busca/{page}" })
-    public String buscaMuseuPorNome(Model model, @PathVariable(value = "page") int page,
+    @GetMapping({ "/museu/busca" })
+    public String buscaMuseuPorNome(Model model, @RequestParam(name = "page") int page,
                                     @RequestParam(name = "sort", required = false) String sort,
                                     @RequestParam(name = "order", required = false) String order,
                                     @RequestParam(name = "nome", required = false) String nome,
@@ -51,7 +51,6 @@ public class CatalogoController {
                                     @RequestParam(name = "cidade", required = false) String cidade,
                                     @RequestParam(name = "bairro", required = false) String bairro,
                                     @RequestParam(name = "email", required = false) String email) {
-
         Specification<Museu> museuSpecs = Specification.where(null);
 
         if(sort == null || sort.isEmpty()) {
@@ -86,6 +85,9 @@ public class CatalogoController {
             museuSpecs = museuSpecs.and(MuseuSpecs.museuLikeBairro(bairro));
         }
 
+        museuSpecs = museuSpecs.and(MuseuSpecs.museuGreaterThanCod(100001));
+        museuSpecs = museuSpecs.and(MuseuSpecs.museuLessThanCod(100021));
+
         Sort s;
 
         if(order.equals("asc")) {
@@ -97,12 +99,35 @@ public class CatalogoController {
         Page<Museu> museusPage = museuRepository.findAll(museuSpecs, PageRequest.of(page, ELEMENTS_PER_PAGE, s));
 
         int maxPages = museusPage.getTotalPages();
-
+        
         Collection<Museu> museus = museusPage.getContent();
+        
+        // Collection<Museu> museus_col = museusPage.getContent();
+
+        // ArrayList<Museu> museus_array = new ArrayList<Museu>(museus_col);
+
+        // System.out.println(museus_array.size());
+
+        // museus_array.removeIf((Museu m) -> m.getCod() < 100001);
+        // museus_array.removeIf((Museu m) -> m.getCod() > 100021);
+
+        // System.out.println(museus_array.size());
+
+        // Collection<Museu> museus = museus_array;
 
         model.addAttribute("museus", museus);
         model.addAttribute("maxpages", maxPages);
         model.addAttribute("page", page);
+        model.addAttribute("order",  order);
+        model.addAttribute("sort",  sort);
+        model.addAttribute("nome",  nome);
+        model.addAttribute("preco",  preco);
+        model.addAttribute("telefone",  telefone);
+        model.addAttribute("rua",  rua);
+        model.addAttribute("numero",  numero);
+        model.addAttribute("cidade",  cidade);
+        model.addAttribute("bairro",  bairro);
+        model.addAttribute("email",  email);
         model.addAttribute("query", nome);
 
         return "lista_de_museus";

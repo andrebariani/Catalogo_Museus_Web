@@ -10,11 +10,6 @@
         $("#busca").css("borderBottom", "2px solid #FFCC47");
         $("#busca a").css("borderBottomColor", "#FFCC47");
 
-        function onSubmitMuseu() {
-            document.getElementById("museuQuery").name = document.getElementById("museuAtributo").value;    
-            document.formMuseu.action="/museu/busca/0";
-        }
-
         function onSubmitColecao() {
             var colecaoQuery = document.getElementById("colecaoQuery").value;
             var colecaoAtributo = document.getElementById("colecaoAtributo").value;
@@ -62,28 +57,15 @@
             <div class="tab-content" id="conteudo-tab">
                 
                 <div class="tab-pane fade show active" id="museu" role="tabpanel">
-                    <form action="" name="formMuseu" onsubmit="onSubmitMuseu();">
+                    <form action="/museu/busca" name="formMuseu">
                         <div class="searchbar">
                             <input class="search_input" type="text" id="museuQuery" name="nome" placeholder="Selecione um campo de busca abaixo...">
                             <input type="image" id="museu_input" class="search_icon" src="imagens/icon.png"></a>
                         </div>
 
-                        <div class="form-group">
-                            <p class="form_busca"> Pesquisar por
-                            <select id="museuAtributo">
-                                <option value="nome">Nome</option>
-                                <option value="cidade">Cidade</option>
-                                <option value="preco">Preço (Em R$)</option>
-                                <option value="email">E-mail</option>
-                                <option value="telefone">Telefone</option>
-                                <option value="rua">Rua</option>
-                                <option value="numero">Número</option>
-                                <option value="bairro">Bairro</option>
-                                
-                            </select>
-                            </p>
-                        </div>
-
+                        <p>Começando da página
+                        <input id="helperPage" name="page" value="0">
+                        </p>
                     </form>
                 </div>
                 

@@ -99,22 +99,9 @@ public class CatalogoController {
         Page<Museu> museusPage = museuRepository.findAll(museuSpecs, PageRequest.of(page, ELEMENTS_PER_PAGE, s));
 
         int maxPages = museusPage.getTotalPages();
-        
+
         Collection<Museu> museus = museusPage.getContent();
         
-        // Collection<Museu> museus_col = museusPage.getContent();
-
-        // ArrayList<Museu> museus_array = new ArrayList<Museu>(museus_col);
-
-        // System.out.println(museus_array.size());
-
-        // museus_array.removeIf((Museu m) -> m.getCod() < 100001);
-        // museus_array.removeIf((Museu m) -> m.getCod() > 100021);
-
-        // System.out.println(museus_array.size());
-
-        // Collection<Museu> museus = museus_array;
-
         model.addAttribute("museus", museus);
         model.addAttribute("maxpages", maxPages);
         model.addAttribute("page", page);
@@ -133,18 +120,11 @@ public class CatalogoController {
         return "lista_de_museus";
     }
 
-    @GetMapping({ "/colecao/busca/nome/{nome}/{page}" })
+    @GetMapping({ "/colecao/busca/nome/{nome}" })
     public String buscaColecaoPorNome(Model model, @PathVariable(value = "nome") String nome, @PathVariable(value = "page") int page) {
-        Pageable SixCards = PageRequest.of(page, ELEMENTS_PER_PAGE);
-        Page<Colecao> colecoesPage = colecaoRepository.findByNomeIgnoreCaseContaining(nome, SixCards);
-
-        int maxPages = colecoesPage.getTotalPages();
-
-        Collection<Colecao> colecoes = colecoesPage.getContent();
+        Collection<Colecao> colecoes = colecaoRepository.findByNomeIgnoreCaseContaining(nome);
 
         model.addAttribute("colecoes", colecoes);
-        model.addAttribute("maxpages", maxPages);
-        model.addAttribute("page", page);
         model.addAttribute("query", nome);
 
         return "lista_de_colecoes";
@@ -158,6 +138,10 @@ public class CatalogoController {
         for (Object[] linha : col_temp){
             Colecao col = new Colecao();
             Museu mus = new Museu();
+
+            if(Integer.parseInt(linha[0].toString()) < 100001 || Integer.parseInt(linha[0].toString()) > 100021) {
+                continue;
+            }
 
             mus.setCod(Integer.parseInt(linha[0].toString()));
             mus.setNome(linha[1].toString());
@@ -173,51 +157,31 @@ public class CatalogoController {
             
 
         model.addAttribute("colecoes", colecoes);
-        // model.addAttribute("maxpages", maxPages);
-        // model.addAttribute("page", page);
         model.addAttribute("query", tipo);
 
         return "lista_de_colecoes";
     }
-    
-    @GetMapping({ "/atividade/busca/nome/{nome}/{page}" })
-    public String buscaAtividadePorNome(Model model, @PathVariable(value = "nome") String nome, @PathVariable(value = "page") int page) {
-        Pageable SixCards = PageRequest.of(page, ELEMENTS_PER_PAGE);
-        Page<Atividade> atividadesPage = atividadeRepository.findByNomeIgnoreCaseContaining(nome, SixCards);
 
-        int maxPages = atividadesPage.getTotalPages();
-
-        Collection<Atividade> atividades = atividadesPage.getContent();
-
-        model.addAttribute("atividades", atividades);
-        model.addAttribute("maxpages", maxPages);
-        model.addAttribute("page", page);
-        model.addAttribute("query", nome);
-
-        return "lista_de_atividades";
-    }
-
-    @GetMapping({ "/atividade/busca/preco/{preco}/{page}"})
-    public String buscaAtividadePorPreco(Model model, @PathVariable(value = "preco") Float preco, @PathVariable(value = "page") int page) {
-        Pageable SixCards = PageRequest.of(page, ELEMENTS_PER_PAGE);
-        Page<Object[]> ativPages = atividadeRepository.findByAtividadePreco(preco, SixCards);
-        
-        int maxPages = ativPages.getTotalPages();
-
-        List<Object[]> ativ_temp = ativPages.getContent();
+    @GetMapping({ "/atividade/busca/preco/{preco}"})
+    public String buscaAtividadePorPreco(Model model, @PathVariable(value = "preco") Float preco) {
+        Iterable<Object[]> ativi = atividadeRepository.findByAtividadePreco(preco);
         
         Collection<Atividade> atividades = new ArrayList<Atividade>();
 
-        for(int i = 0; i < ativ_temp.size(); i++){
+        for(Object[] linha : ativi){
             Atividade ativ = new Atividade();
             Museu mus = new Museu();
 
-            mus.setCod(Integer.parseInt(ativ_temp.get(i)[0].toString()));
-            mus.setNome(ativ_temp.get(i)[1].toString());
+            if(Integer.parseInt(linha[0].toString()) < 100001 || Integer.parseInt(linha[0].toString()) > 100021) {
+                continue;
+            }
+
+            mus.setCod(Integer.parseInt(linha[0].toString()));
+            mus.setNome(linha[1].toString());
             
-            ativ.setHorario(ativ_temp.get(i)[2].toString());
-            ativ.setNome(ativ_temp.get(i)[3].toString());
-            ativ.setPreco(Float.parseFloat(ativ_temp.get(i)[4].toString()));
+            ativ.setHorario(linha[2].toString());
+            ativ.setNome(linha[3].toString());
+            ativ.setPreco(Float.parseFloat(linha[4].toString()));
 
             ativ.setMuseu(mus);
 
@@ -225,8 +189,6 @@ public class CatalogoController {
         }    
 
         model.addAttribute("atividades", atividades);
-        model.addAttribute("maxpages", maxPages);
-        model.addAttribute("page", page);
         model.addAttribute("query", preco);
 
         return "lista_de_atividades";

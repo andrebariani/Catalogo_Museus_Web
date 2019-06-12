@@ -14,14 +14,14 @@
             var colecaoQuery = document.getElementById("colecaoQuery").value;
             var colecaoAtributo = document.getElementById("colecaoAtributo").value;
             
-            document.formColecao.action="/colecao/busca/" + colecaoAtributo + "/" + colecaoQuery + "/" + "0";
+            document.formColecao.action="/colecao/busca/" + colecaoAtributo + "/" + colecaoQuery;
         }
 
         function onSubmitAtividade() {
             var atividadeQuery = document.getElementById("atividadeQuery").value;
             var atividadeAtributo = document.getElementById("atividadeAtributo").value;
             
-            document.formAtividade.action="/atividade/busca/" + atividadeAtributo + "/" + atividadeQuery + "/" + "0";
+            document.formAtividade.action="/atividade/busca/" + atividadeAtributo + "/" + atividadeQuery;
         }
     
     </script>

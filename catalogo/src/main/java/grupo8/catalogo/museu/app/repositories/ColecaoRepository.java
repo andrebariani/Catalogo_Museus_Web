@@ -20,6 +20,5 @@ public interface ColecaoRepository extends PagingAndSortingRepository<Colecao, L
     @Query(value = "SELECT * FROM COLECAO WHERE cod_mus = :pCod", nativeQuery = true)
     Collection<Colecao> listColecaoByMuseu(@Param("pCod") int cod);
 
-    Page<Colecao> findByNomeIgnoreCaseContaining(String nome, Pageable page);
-    Page<Colecao> findByTipoIgnoreCaseContaining(String tipo, Pageable page);
+    Collection<Colecao> findByNomeIgnoreCaseContaining(String nome);
 }

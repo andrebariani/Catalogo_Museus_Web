@@ -10,22 +10,7 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 container">
             <section>
                 <h1 class="align-text-top mt-3 mb-3">Resultados da busca por: ${query}</h1>
-               
-                <ul class="list-group">
-                    <c:forEach begin="0" end="${maxpages}" var="i">
-                        <c:choose>  
-                            <c:when test="${page eq i}">
-                                <li class="list-group-item active">${i+1}
-                                </li>
-                            </c:when>
-                            <c:otherwise>
-                                <li class="list-group-item"><a href="${url}${i}">${i+1}</a>
-                                </li>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-                </ul>
-
+                
                 <c:forEach var="atividade" items="${atividades}">
                     <c:set var = "atividadeUrl" value = "/museu/${atividade.getMuseu().getCod()}" />
                     <div id="busca" class="row mb-2">

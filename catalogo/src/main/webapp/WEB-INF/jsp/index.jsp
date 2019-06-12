@@ -24,9 +24,6 @@
                         <div class="container">
                         <div class="carousel-caption text-left d-none d-md-block">
                                 <h1>Björk Digital - Museu da Imagem e Som</h1>
-                                <p>O MIS (São Paulo/SP) recebe a mostra internacional que unem
-                                    tecnologia e arte numa exposição-instalação contemporânea da
-                                    musicista islandesa Björk.</p>
                         </div>
                         </div>
                     </div>
@@ -36,9 +33,6 @@
                         <div class="container">
                         <div class="carousel-caption d-none d-md-block">
                                 <h1>O Rio dos navegantes - Museu de Arte do Rio</h1>
-                                <p>Evento gratuito, a mostra aborda a história do Rio de Janeiro como destino
-                                    de navegantes que aportaram na cidade e compuseram sua história, e conta com
-                                    mais de 550 peças históricas, oficinas e uma ambientação imersiva.</p>
                         </div>
                         </div>
                     </div>
@@ -48,9 +42,6 @@
                         <div class="container">
                         <div class="carousel-caption text-right d-none d-md-block">
                                 <h1>Liubliana de Plečnik - Museu do Estado de Pernambuco</h1>
-                                <p>A exposição trata da vida e obra do maior arquiteto esloveno, Jože Plečnik,
-                                    que desenhou diversos edifícios da capital eslovena Liubliana, com 20 painéis
-                                    em português e inglês e uma palestra da arquiteta Ma. Darja Kos Braga.</p>
                         </div>
                         </div>
                     </div>

@@ -54,7 +54,7 @@ public class CatalogoController {
         Specification<Museu> museuSpecs = Specification.where(null);
 
         if(sort == null || sort.isEmpty()) {
-            sort = "nome";
+            sort = "preco";
         }
 
         if(order == null || order.isEmpty()) {
@@ -118,16 +118,6 @@ public class CatalogoController {
         model.addAttribute("query", nome);
 
         return "lista_de_museus";
-    }
-
-    @GetMapping({ "/colecao/busca/nome/{nome}" })
-    public String buscaColecaoPorNome(Model model, @PathVariable(value = "nome") String nome, @PathVariable(value = "page") int page) {
-        Collection<Colecao> colecoes = colecaoRepository.findByNomeIgnoreCaseContaining(nome);
-
-        model.addAttribute("colecoes", colecoes);
-        model.addAttribute("query", nome);
-
-        return "lista_de_colecoes";
     }
 
     @GetMapping({ "/colecao/busca/tipo/{tipo}" })

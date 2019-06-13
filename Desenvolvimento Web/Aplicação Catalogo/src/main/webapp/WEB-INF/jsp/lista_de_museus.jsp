@@ -12,7 +12,7 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <form action="/museu/busca" name="formMuseu">
+                            <form id="filtragem" action="/museu/busca" name="formMuseu">
                                 <div class="form-group">
                                     <label for="telefone">Nome: </label>
                                     <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite Nome" value="${nome}">
@@ -66,22 +66,8 @@
                 
                 <h1 class="align-text-top mt-3 mb-3">Resultados da Pesquisa</h1>
                
-               <ul class="list-group">
-                    <c:forEach begin="0" end="${maxpages - 1}" var="i">
-                        <c:choose>  
-                            <c:when test="${page eq i}">
-                                <li class="list-group-item active"><button type="submit" class="btn btn-light" name="page" value="${i}">${i+1}</button>
-                                </li>
-                            </c:when>
-                            <c:otherwise>
-                                <li class="list-group-item"><button type="submit" class="btn btn-light" name="page" value="${i}">${i+1}</button>
-                                </li>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-                </ul>
-
-                </form>
+               
+                
                 <c:forEach var="museu" items="${museus}">
                     <c:set var = "museuUrl" value = "/museu/${museu.getCod()}" />
                     <div id="busca" class="row mb-2">
@@ -113,6 +99,22 @@
                                 </div>
                     </div>
                 </c:forEach>    
+                <ul class="list-group">
+                    <c:forEach begin="0" end="${maxpages - 1}" var="i">
+                        <c:choose>  
+                            <c:when test="${page eq i}">
+                                <li class="list-group-item active"><button type="submit" class="btn btn-light" name="page" value="${i}">${i+1}</button>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="list-group-item"><button type="submit" class="btn btn-light" name="page" value="${i}">${i+1}</button>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </ul>
+                
+            </form>
             </section>
         </main>
         </div>
